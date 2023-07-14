@@ -1,53 +1,59 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     background-color: lightgray;
 }
+body{
+    padding: .5em;
+}
 
 #container{
-    margin: 1.5625em auto;
+    margin: 0 auto;
     width: 100%;
-    max-width: 550px;
+    max-width: 750px;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
     background-color: #FFFFFF;
+    padding: 1em;
 }
 
 #form{
+    margin: .5em auto;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    height: 90px;    
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1em;
 }
 
 #color-picker,
 #mode,
 #get-color-btn{
-    height:42px; 
+    width: 100%;
+    height:2.5em; 
+    font-size: 0.875rem;
 }
 
 #color-picker{
-    width: 61px;
     border: 0.5px #D1D5DB solid;
     background-color: #D1D5DB;
 }
 
 #mode{
-    width: 312px;
     padding-left: 0.8125em;
     border-radius: 6px;
-    font-size: 0.875rem;
 }
 
 #get-color-btn{
-    width: 123px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    font-size: 0.75rem;
     font-weight: 500;
     color: #374151;
+    background-color: #ffffff;
+    border-radius: 4px;
 }
 
 #mode,
@@ -56,19 +62,71 @@ html, body {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-
 #color-display{
-    height: 460px;
-    display: grid;
-    grid-template: auto 46px / repeat(5, 1fr);
+    margin: 1.5em auto 0 auto;
 }
 
 .color{
-    height: 100%;
+    height: 7vh;
 }
 
 .hex-value{
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: #2B283A;
     text-align: center;
+    margin: .75em;
+}
+
+#copied-message{
+    display: none;
+    margin-top: 1em;
+    text-align: center;
+    color: #2B283A;
+}
+
+@media screen and (min-width: 500px) {
+    #container{
+        padding: 1.75em;
+    }
+
+    #get-color-btn,
+    #mode,
+    .hex-value,
+    footer a,
+    footer p{
+        font-size: 1rem;
+    }
+
+    #form{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #color-display{
+        height: 75vh;
+        display: grid;
+        grid-template: auto / repeat(5, 1fr);
+    }
+
+    .color-container{
+        display: grid;
+        grid-template-rows: 95% auto;
+    }
+
+    .color{
+        height: 100%;
+    }
+}
+
+
+/* FOOTER */
+footer {
+    padding: .5em;
+    font-size: .75rem;
+    text-align: center;
+}
+
+footer,
+footer a{
+    color: #2B283A;
 }
